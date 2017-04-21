@@ -25,7 +25,7 @@ class TweetViewController: UIViewController {
         
         // Configure navigation bar.
         if let navigationBar = navigationController?.navigationBar {
-            navigationBar.barTintColor = UIColor(red: 62.0 / 255.0, green: 204.0 / 255.0, blue: 1.0, alpha: 1.0)
+            navigationBar.barTintColor = twitterColor
             navigationBar.tintColor = UIColor.white
             navigationBar.titleTextAttributes = [
                 NSFontAttributeName : UIFont.boldSystemFont(ofSize: 22),
@@ -95,6 +95,10 @@ class TweetViewController: UIViewController {
             let newTweetViewController = navigationController.topViewController as! NewTweetViewController
             newTweetViewController.replyToUserScreenName = tweet?.user?.screenname
             newTweetViewController.reply_id = tweet?.id
+        } else if segue.identifier == "showProfile" {
+            let profileNavigationController = segue.destination as! UINavigationController
+            let profileViewController = profileNavigationController.topViewController as! ProfileViewController
+            profileViewController.user = tweet?.user
         }
     }
     

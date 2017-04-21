@@ -28,15 +28,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.estimatedRowHeight = 80.0
         tableView.insertSubview(refreshControl, at: 0)
         
-        // Set delegate for new tweet view.
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        let nc = storyboard.instantiateViewController(withIdentifier: "NewTweetNavigationController") as! UINavigationController
-//        let vc = nc.topViewController as! NewTweetViewController
-//        vc.delegate = self
-        
         // Configure navigation bar.
         if let navigationBar = navigationController?.navigationBar {
-            navigationBar.barTintColor = UIColor(red: 62.0 / 255.0, green: 204.0 / 255.0, blue: 1.0, alpha: 1.0)
+            navigationBar.barTintColor = twitterColor
             navigationBar.tintColor = UIColor.white
             navigationBar.titleTextAttributes = [
                 NSFontAttributeName : UIFont.boldSystemFont(ofSize: 22),
@@ -89,6 +83,14 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             newTweetViewController.replyToUserScreenName = nil
             newTweetViewController.reply_id = nil
             newTweetViewController.delegate = self
+        } else if segue.identifier == "showProfile" {
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            let tweet = tweets[indexPath!.row]
+            
+            let profileViewController = segue.destination as! ProfileViewController
+            profileViewController.user = tweet.user
         }
     }
     

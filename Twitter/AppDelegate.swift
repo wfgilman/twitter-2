@@ -20,10 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if User.currentUser != nil {
             print("There is a current user")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
             
-            window?.rootViewController = vc
+            // let mainViewController = window?.rootViewController as! MainViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+            let profileNavigationController = storyboard.instantiateViewController(withIdentifier: "ProfileNavigationController")
+            
+            mainViewController.contentViewController = profileNavigationController
+            menuViewController.profileNavigationController = profileNavigationController
+            mainViewController.menuViewController = menuViewController
+            menuViewController.mainViewController = mainViewController
+            
+            
+            window?.rootViewController = mainViewController
             
         }
         
