@@ -16,13 +16,15 @@ class ProfileView: UIView {
     @IBOutlet weak var screennameLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var followerCountLabel: UILabel!
+    @IBOutlet weak var tweetCountLabel: UILabel!
     
     var user: User? {
         didSet {
             nameLabel.text = user?.name
             screennameLabel.text = user?.screenname
             followerCountLabel.text = "\((user?.followersCount)!)"
-            followerCountLabel.text = "\((user?.followingCount)!)"
+            followingCountLabel.text = "\((user?.followingCount)!)"
+            tweetCountLabel.text = "\((user?.tweetCount)!)"
             if user?.profileBackgroundUrl != nil {
                 profileBackgroundImageView.setImageWith((user?.profileBackgroundUrl)!)
             } else {

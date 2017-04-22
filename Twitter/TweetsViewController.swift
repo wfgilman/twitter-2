@@ -63,7 +63,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showTweetSegue", sender: UITableViewCell.self)
+        let cell = tableView.cellForRow(at: indexPath)
+        self.performSegue(withIdentifier: "showTweetSegue", sender: cell)
     }
     
     func didTweet(newTweetViewController: NewTweetViewController, tweet: Tweet) {
