@@ -32,9 +32,9 @@ class LoginViewController: UIViewController {
             let mainViewController = segue.destination as! MainViewController
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-            let profileNavigationController = storyboard.instantiateViewController(withIdentifier: "ProfileNavigationController")
-            mainViewController.contentViewController = profileNavigationController
-            menuViewController.profileNavigationController = profileNavigationController
+//            let profileNavigationController = storyboard.instantiateViewController(withIdentifier: "ProfileNavigationController")
+//            mainViewController.contentViewController = profileNavigationController
+//            menuViewController.profileNavigationController = profileNavigationController
             mainViewController.menuViewController = menuViewController
             menuViewController.mainViewController = mainViewController
         }

@@ -13,12 +13,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var profileNavigationController: UIViewController!
     private var tweetsNavigationController: UIViewController!
+    private var mentionsNavigationController: UIViewController!
     
     var viewControllers: [UIViewController] = []
     
     var mainViewController: MainViewController!
-    var profileNavigationController: UIViewController!
+//    var profileNavigationController: UIViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +32,16 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.rowHeight = 50.0
         
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        profileNavigationController = storyboard.instantiateViewController(withIdentifier: "ProfileNavigationController")
         tweetsNavigationController = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
+        mentionsNavigationController = storyboard.instantiateViewController(withIdentifier: "MentionsNavigationController")
         
         viewControllers.append(profileNavigationController)
         viewControllers.append(tweetsNavigationController)
+        viewControllers.append(mentionsNavigationController)
+        
+        mainViewController.contentViewController = profileNavigationController
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +50,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
-        let menuLabels = ["Profile", "Timeline"]
+        let menuLabels = ["Profile", "Timeline", "Mentions"]
         cell.menuLabel.text = menuLabels[indexPath.row]
         return cell
     }

@@ -95,10 +95,6 @@ class TweetViewController: UIViewController {
             let newTweetViewController = navigationController.topViewController as! NewTweetViewController
             newTweetViewController.replyToUserScreenName = tweet?.user?.screenname
             newTweetViewController.reply_id = tweet?.id
-        } else if segue.identifier == "showProfile" {
-            let profileNavigationController = segue.destination as! UINavigationController
-            let profileViewController = profileNavigationController.topViewController as! ProfileViewController
-            profileViewController.user = tweet?.user
         }
     }
     

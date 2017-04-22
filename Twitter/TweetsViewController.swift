@@ -27,6 +27,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80.0
         tableView.insertSubview(refreshControl, at: 0)
+        let cell = UINib(nibName: "BaseTweetCell", bundle: nil)
+        tableView.register(cell, forCellReuseIdentifier: "TweetsTweetCell")
         
         // Configure navigation bar.
         if let navigationBar = navigationController?.navigationBar {
@@ -47,7 +49,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     // Delegate methods.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetsTweetCell", for: indexPath) as! BaseTweetCell
         cell.tweet = tweets[indexPath.row]
         return cell
     }
@@ -58,6 +60,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         } else {
             return 0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showTweetSegue", sender: UITableViewCell.self)
     }
     
     func didTweet(newTweetViewController: NewTweetViewController, tweet: Tweet) {
@@ -83,14 +89,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             newTweetViewController.replyToUserScreenName = nil
             newTweetViewController.reply_id = nil
             newTweetViewController.delegate = self
-        } else if segue.identifier == "showProfile" {
-            
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: cell)
-            let tweet = tweets[indexPath!.row]
-            
-            let profileViewController = segue.destination as! ProfileViewController
-            profileViewController.user = tweet.user
         }
     }
     

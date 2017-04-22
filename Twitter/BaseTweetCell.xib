@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="BaseTweetCell" customModule="Twitter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Gc-ib-RaH">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="hIf-m4-x4g"/>
+                            <constraint firstAttribute="height" constant="50" id="hTS-4r-ysJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Samuel L. Jackson" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-XP-MAM">
+                        <rect key="frame" x="66" y="8" width="126" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="@SamuelLJackson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-db-nX7">
+                        <rect key="frame" x="195" y="8.5" width="114" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="1D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fep-6K-74c">
+                        <rect key="frame" x="351" y="9" width="16" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have seen the future of newspapers: http://t.co/UfmWt2OTCP" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hX-im-gvL">
+                        <rect key="frame" x="66" y="30" width="301" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="3hX-im-gvL" secondAttribute="trailing" constant="8" id="0yh-pO-GoA"/>
+                    <constraint firstItem="2Gc-ib-RaH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="306-Gm-2wi"/>
+                    <constraint firstItem="wbK-XP-MAM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4IZ-29-hsR"/>
+                    <constraint firstItem="UK3-db-nX7" firstAttribute="centerY" secondItem="wbK-XP-MAM" secondAttribute="centerY" id="7Gm-9A-kUQ"/>
+                    <constraint firstAttribute="trailing" secondItem="fep-6K-74c" secondAttribute="trailing" constant="8" id="CaD-xq-v7m"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2Gc-ib-RaH" secondAttribute="bottom" constant="8" id="Hnl-9M-NWs"/>
+                    <constraint firstItem="fep-6K-74c" firstAttribute="centerY" secondItem="UK3-db-nX7" secondAttribute="centerY" id="K4G-6i-q0O"/>
+                    <constraint firstItem="wbK-XP-MAM" firstAttribute="leading" secondItem="2Gc-ib-RaH" secondAttribute="trailing" constant="8" id="MU9-Wu-20o"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3hX-im-gvL" secondAttribute="bottom" constant="8" id="Mhj-1a-usW"/>
+                    <constraint firstItem="3hX-im-gvL" firstAttribute="leading" secondItem="2Gc-ib-RaH" secondAttribute="trailing" constant="8" id="RHa-H0-QtV"/>
+                    <constraint firstItem="fep-6K-74c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UK3-db-nX7" secondAttribute="trailing" constant="3" id="bkc-xc-oIA"/>
+                    <constraint firstItem="2Gc-ib-RaH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="jjK-dh-jZL"/>
+                    <constraint firstItem="3hX-im-gvL" firstAttribute="top" secondItem="wbK-XP-MAM" secondAttribute="bottom" constant="5" id="rMv-6x-vPS"/>
+                    <constraint firstItem="UK3-db-nX7" firstAttribute="leading" secondItem="wbK-XP-MAM" secondAttribute="trailing" constant="3" id="wR2-o8-i2y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="createdAtLabel" destination="fep-6K-74c" id="L4u-LO-4QI"/>
+                <outlet property="nameLabel" destination="wbK-XP-MAM" id="ykE-XO-7dg"/>
+                <outlet property="screennameLabel" destination="UK3-db-nX7" id="TuO-Rq-ghs"/>
+                <outlet property="tweetTextLabel" destination="3hX-im-gvL" id="3jc-DD-NGz"/>
+                <outlet property="userImageView" destination="2Gc-ib-RaH" id="rjv-a6-6WO"/>
+            </connections>
+            <point key="canvasLocation" x="-113.5" y="-1"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -28,6 +28,9 @@
 		BEED4C171EA92BC600015321 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4C161EA92BC600015321 /* MenuCell.swift */; };
 		BEED4C1A1EA9C74400015321 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4C191EA9C74400015321 /* Constants.swift */; };
 		BEED4C1C1EA9D96A00015321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEED4C1B1EA9D96A00015321 /* Main.storyboard */; };
+		BEED4C1F1EAAB8A200015321 /* BaseTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4C1D1EAAB8A200015321 /* BaseTweetCell.swift */; };
+		BEED4C201EAAB8A200015321 /* BaseTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEED4C1E1EAAB8A200015321 /* BaseTweetCell.xib */; };
+		BEED4C221EAAC2E900015321 /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4C211EAAC2E900015321 /* MentionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		BEED4C161EA92BC600015321 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		BEED4C191EA9C74400015321 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BEED4C1B1EA9D96A00015321 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BEED4C1D1EAAB8A200015321 /* BaseTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTweetCell.swift; sourceTree = "<group>"; };
+		BEED4C1E1EAAB8A200015321 /* BaseTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTweetCell.xib; sourceTree = "<group>"; };
+		BEED4C211EAAC2E900015321 /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
 		F42C554738941743B22EB0E6 /* Pods-Twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +155,7 @@
 				BEED4C0E1EA81A3400015321 /* ProfileViewController.swift */,
 				BEED4C121EA92AD100015321 /* MainViewController.swift */,
 				BEED4C141EA92B4500015321 /* MenuViewController.swift */,
+				BEED4C211EAAC2E900015321 /* MentionsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -161,6 +168,8 @@
 				BEE984841EA08F7D002C2AA6 /* TweetView.swift */,
 				BEE984861EA13DFA002C2AA6 /* NewTweetView.swift */,
 				BEED4C101EA81AF000015321 /* ProfileView.swift */,
+				BEED4C1D1EAAB8A200015321 /* BaseTweetCell.swift */,
+				BEED4C1E1EAAB8A200015321 /* BaseTweetCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -237,6 +246,7 @@
 			files = (
 				BEED4C1C1EA9D96A00015321 /* Main.storyboard in Resources */,
 				BEA90B6F1E9E885E00925ACE /* LaunchScreen.storyboard in Resources */,
+				BEED4C201EAAB8A200015321 /* BaseTweetCell.xib in Resources */,
 				BEA90B6C1E9E885E00925ACE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA90B7C1E9E9F8300925ACE /* User.swift in Sources */,
+				BEED4C221EAAC2E900015321 /* MentionsViewController.swift in Sources */,
 				BEED4C1A1EA9C74400015321 /* Constants.swift in Sources */,
 				BEED4C151EA92B4500015321 /* MenuViewController.swift in Sources */,
 				BEED4C111EA81AF000015321 /* ProfileView.swift in Sources */,
@@ -306,6 +317,7 @@
 				BEE984831EA089CE002C2AA6 /* TweetViewController.swift in Sources */,
 				BEA90B771E9E8BB100925ACE /* LoginViewController.swift in Sources */,
 				BEED4C131EA92AD100015321 /* MainViewController.swift in Sources */,
+				BEED4C1F1EAAB8A200015321 /* BaseTweetCell.swift in Sources */,
 				BEED4C0F1EA81A3400015321 /* ProfileViewController.swift in Sources */,
 				BEA90B801E9EA3E500925ACE /* TwitterClient.swift in Sources */,
 				BEE984891EA13EE8002C2AA6 /* NewTweetViewController.swift in Sources */,
