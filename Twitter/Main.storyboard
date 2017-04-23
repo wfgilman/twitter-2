@@ -246,6 +246,7 @@
                     <navigationItem key="navigationItem" title="Mentions" id="B88-qT-vCc"/>
                     <connections>
                         <outlet property="tableView" destination="Bap-AY-mnr" id="2X7-no-aMK"/>
+                        <segue destination="dFl-ex-Fff" kind="show" identifier="showMentionSegue" id="9Nr-nN-5PH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCF-8k-aGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -379,6 +380,7 @@
                     <connections>
                         <outlet property="profileView" destination="MFh-KM-4mW" id="5sB-Kw-nkk"/>
                         <outlet property="tableView" destination="lpt-Fa-6jA" id="BEG-XL-ho3"/>
+                        <segue destination="dFl-ex-Fff" kind="show" identifier="showUserTweetSegue" id="4OB-WN-XvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfm-8b-Gwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -579,7 +581,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZY-h6-0a9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="trE-tK-Qfq"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="2777"/>
+            <point key="canvasLocation" x="1162" y="2893"/>
         </scene>
         <!--New Tweet View Controller-->
         <scene sceneID="dCt-GM-kuU">
@@ -655,7 +657,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwv-Hb-AfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="4316"/>
+            <point key="canvasLocation" x="-55" y="4443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LR9-jd-f3t">
@@ -691,7 +693,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kW-UP-l0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="3546"/>
+            <point key="canvasLocation" x="-55" y="3654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aig-Hj-d9m">
@@ -738,6 +740,7 @@
         <image name="twitter" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4g9-X7-NGV"/>
+        <segue reference="9Nr-nN-5PH"/>
+        <segue reference="tAI-6W-1vH"/>
     </inferredMetricsTieBreakers>
 </document>

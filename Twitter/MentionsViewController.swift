@@ -23,7 +23,7 @@ class MentionsViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80.0
         let cell = UINib(nibName: "BaseTweetCell", bundle: nil)
-        tableView.register(cell, forCellReuseIdentifier: "MentionsTweetCell")
+        tableView.register(cell, forCellReuseIdentifier: "TweetCell")
         
         // Configure navigation bar.
         if let navigationBar = navigationController?.navigationBar {
@@ -54,9 +54,26 @@ class MentionsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MentionsTweetCell", for: indexPath) as! BaseTweetCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! BaseTweetCell
         cell.tweet = tweets[indexPath.row]
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        self.performSegue(withIdentifier: "showMentionSegue", sender: cell)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMentionSegue" {
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            let tweet = tweets[indexPath!.row]
+            
+            let tweetViewController = segue.destination as! TweetViewController
+            tweetViewController.tweet = tweet
+            
+        }
+    }
 }

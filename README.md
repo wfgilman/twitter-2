@@ -1,6 +1,6 @@
 # Project 4 - *Twitter II*
 
-Time spent: **11** hours spent in total
+Time spent: **11.5** hours spent in total
 
 ## User Stories
 

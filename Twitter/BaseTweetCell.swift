@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol BaseTweetCellDelegate {
+    @objc optional func navigateToProfileViewController(user: User)
+}
+
 class BaseTweetCell: UITableViewCell {
 
     @IBOutlet weak var userImageView: UIImageView!
@@ -15,6 +19,8 @@ class BaseTweetCell: UITableViewCell {
     @IBOutlet weak var screennameLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
+    
+    var baseTweetCellDelegate: BaseTweetCellDelegate!
     
     var tweet: Tweet! {
         didSet {
@@ -60,5 +66,10 @@ class BaseTweetCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func didTapProfileImage(_ sender: UITapGestureRecognizer) {
+        if let delegate = baseTweetCellDelegate {
+            delegate.navigateToProfileViewController!(user: tweet.user!)
+        }
+    }
     
 }

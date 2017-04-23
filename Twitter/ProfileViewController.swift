@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80.0
         let cell = UINib(nibName: "BaseTweetCell", bundle: nil)
-        tableView.register(cell, forCellReuseIdentifier: "ProfileTweetCell")
+        tableView.register(cell, forCellReuseIdentifier: "TweetCell")
         
         // Configure navigation bar.
         if let navigationBar = navigationController?.navigationBar {
@@ -61,9 +61,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTweetCell", for: indexPath) as! BaseTweetCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! BaseTweetCell
         cell.tweet = tweets[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        self.performSegue(withIdentifier: "showUserTweetSegue", sender: cell)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showUserTweetSegue" {
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            let tweet = tweets[indexPath!.row]
+            
+            let tweetViewController = segue.destination as! TweetViewController
+            tweetViewController.tweet = tweet
+            
+        }
     }
 
 

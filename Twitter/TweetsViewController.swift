@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewTweetViewControllerDelegate {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewTweetViewControllerDelegate, BaseTweetCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -28,7 +28,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.estimatedRowHeight = 80.0
         tableView.insertSubview(refreshControl, at: 0)
         let cell = UINib(nibName: "BaseTweetCell", bundle: nil)
-        tableView.register(cell, forCellReuseIdentifier: "TweetsTweetCell")
+        tableView.register(cell, forCellReuseIdentifier: "TweetCell")
         
         // Configure navigation bar.
         if let navigationBar = navigationController?.navigationBar {
@@ -49,8 +49,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     // Delegate methods.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetsTweetCell", for: indexPath) as! BaseTweetCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! BaseTweetCell
         cell.tweet = tweets[indexPath.row]
+        cell.baseTweetCellDelegate = self
         return cell
     }
     
@@ -63,6 +64,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         let cell = tableView.cellForRow(at: indexPath)
         self.performSegue(withIdentifier: "showTweetSegue", sender: cell)
     }
@@ -70,6 +72,16 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     func didTweet(newTweetViewController: NewTweetViewController, tweet: Tweet) {
         tweets.insert(tweet, at: 0)
         tableView.reloadData()
+    }
+    
+    func navigateToProfileViewController(user: User) {
+        if let navigationController = parent as? UINavigationController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let profileViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+            profileViewController.user = user
+            profileViewController.navigationItem.leftBarButtonItem = nil
+            navigationController.pushViewController(profileViewController, animated: true)
+        }
     }
     
     // Segue method.
