@@ -44,6 +44,16 @@ class MentionsViewController: UIViewController, UITableViewDataSource, UITableVi
 
         // Do any additional setup after loading the view.
     }
+    
+    func navigateToProfileViewController(user: User) {
+        if let navigationController = parent as? UINavigationController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let profileViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+            profileViewController.user = user
+            profileViewController.navigationItem.leftBarButtonItem = nil
+            navigationController.pushViewController(profileViewController, animated: true)
+        }
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tweets != nil {

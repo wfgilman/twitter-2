@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewTweetViewControllerDelegate, BaseTweetCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -88,12 +89,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTweetSegue" {
             
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: cell)
-            let tweet = tweets[indexPath!.row]
-        
             let tweetViewController = segue.destination as! TweetViewController
-            tweetViewController.tweet = tweet
+            tweetViewController.tweet = (sender as! BaseTweetCell).tweet
             
         } else if segue.identifier == "newTweetSegue" {
             

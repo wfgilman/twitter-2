@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         profileView.user = user
-
+        
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             ]
         }
         
-        TwitterClient.sharedInstance?.statuses(success: { (tweets: [Tweet]) in
+        TwitterClient.sharedInstance?.statuses(user: user, success: { (tweets: [Tweet]) in
             self.tweets = tweets
             self.tableView.reloadData()
         }, failure: { (error: Error) in
@@ -61,26 +61,29 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! BaseTweetCell
-        cell.tweet = tweets[indexPath.row]
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
+            cell.user = user
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! BaseTweetCell
+            cell.tweet = tweets[indexPath.row - 1]
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        self.performSegue(withIdentifier: "showUserTweetSegue", sender: cell)
+        tableView.deselectRow(at: indexPath, animated: false)
+        if indexPath.row != 0 {
+            let cell = tableView.cellForRow(at: indexPath)
+            self.performSegue(withIdentifier: "showUserTweetSegue", sender: cell)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showUserTweetSegue" {
-            
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: cell)
-            let tweet = tweets[indexPath!.row]
-            
             let tweetViewController = segue.destination as! TweetViewController
-            tweetViewController.tweet = tweet
-            
+            tweetViewController.tweet = (sender as! BaseTweetCell).tweet
         }
     }
 

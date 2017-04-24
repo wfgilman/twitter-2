@@ -18,16 +18,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Gc-ib-RaH">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Gc-ib-RaH">
                         <rect key="frame" x="8" y="8" width="50" height="50"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="hIf-m4-x4g"/>
                             <constraint firstAttribute="height" constant="50" id="hTS-4r-ysJ"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="ZV4-iN-S6C" appends="YES" id="DbS-5J-1c8"/>
-                        </connections>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Samuel L. Jackson" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-XP-MAM">
                         <rect key="frame" x="66" y="8" width="126" height="17"/>
@@ -80,10 +77,5 @@
             </connections>
             <point key="canvasLocation" x="-113.5" y="-1"/>
         </tableViewCell>
-        <tapGestureRecognizer id="ZV4-iN-S6C">
-            <connections>
-                <action selector="didTapProfileImage:" destination="KGk-i7-Jjw" id="S3E-C4-McO"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
 </document>

@@ -31,6 +31,7 @@
 		BEED4C1F1EAAB8A200015321 /* BaseTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4C1D1EAAB8A200015321 /* BaseTweetCell.swift */; };
 		BEED4C201EAAB8A200015321 /* BaseTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEED4C1E1EAAB8A200015321 /* BaseTweetCell.xib */; };
 		BEED4C221EAAC2E900015321 /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4C211EAAC2E900015321 /* MentionsViewController.swift */; };
+		BEED4C241EAD5C7C00015321 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED4C231EAD5C7C00015321 /* ProfileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		BEED4C1D1EAAB8A200015321 /* BaseTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTweetCell.swift; sourceTree = "<group>"; };
 		BEED4C1E1EAAB8A200015321 /* BaseTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTweetCell.xib; sourceTree = "<group>"; };
 		BEED4C211EAAC2E900015321 /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
+		BEED4C231EAD5C7C00015321 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		F42C554738941743B22EB0E6 /* Pods-Twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				BEED4C101EA81AF000015321 /* ProfileView.swift */,
 				BEED4C1D1EAAB8A200015321 /* BaseTweetCell.swift */,
 				BEED4C1E1EAAB8A200015321 /* BaseTweetCell.xib */,
+				BEED4C231EAD5C7C00015321 /* ProfileCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				BEA90B7E1E9E9F8D00925ACE /* Tweet.swift in Sources */,
 				BEA90B821E9EAF8300925ACE /* TweetsViewController.swift in Sources */,
 				BEE984831EA089CE002C2AA6 /* TweetViewController.swift in Sources */,
+				BEED4C241EAD5C7C00015321 /* ProfileCell.swift in Sources */,
 				BEA90B771E9E8BB100925ACE /* LoginViewController.swift in Sources */,
 				BEED4C131EA92AD100015321 /* MainViewController.swift in Sources */,
 				BEED4C1F1EAAB8A200015321 /* BaseTweetCell.swift in Sources */,

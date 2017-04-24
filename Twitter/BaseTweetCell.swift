@@ -58,6 +58,9 @@ class BaseTweetCell: UITableViewCell {
         // Initialization code
         userImageView.layer.cornerRadius = 3
         userImageView.clipsToBounds = true
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapProfileImage(_:)))
+        userImageView.addGestureRecognizer(tapRecognizer)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -66,7 +69,7 @@ class BaseTweetCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func didTapProfileImage(_ sender: UITapGestureRecognizer) {
+    func didTapProfileImage(_ sender: UITapGestureRecognizer) {
         if let delegate = baseTweetCellDelegate {
             delegate.navigateToProfileViewController!(user: tweet.user!)
         }

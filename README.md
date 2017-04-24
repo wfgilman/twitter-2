@@ -1,6 +1,6 @@
 # Project 4 - *Twitter II*
 
-Time spent: **11.5** hours spent in total
+Time spent: **15.5** hours spent in total
 
 ## User Stories
 
@@ -13,8 +13,8 @@ The following **required** functionality is completed:
 - [x] Profile page
    - [x] Contains the user header view
    - [x] Contains a section with the users basic stats: # tweets, # following, # followers
-- [ ] Home Timeline
-   - [ ] Tapping on a user image should bring up that user's profile page
+- [x] Home Timeline
+   - [x] Tapping on a user image should bring up that user's profile page
 
 The following **optional** features are implemented:
 
