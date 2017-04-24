@@ -20,7 +20,7 @@ class ProfileCell: UITableViewCell {
     var user: User? {
         didSet {
             nameLabel.text = user?.name
-            screennameLabel.text = user?.screenname
+            screennameLabel.text = "@\((user?.screenname)!)"
             followerCountLabel.text = "\((user?.followersCount)!)"
             followingCountLabel.text = "\((user?.followingCount)!)"
             tweetCountLabel.text = "\((user?.tweetCount)!)"
